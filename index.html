@@ -3791,7 +3791,7 @@ ${sider}
 }
 
 function VurderingElevOppgaver({ fag, elevNr, data, go, nav, navneliste }) {
-  const oppgaver = data.oppgaver.filter(o => o.fagId===fag.id);
+  const oppgaver = data.oppgaver.filter(o => o.fagId===fag.id && !o.arkivert);
   const vurd = data.vurderinger.filter(v => v.fagId===fag.id && v.elevNr===elevNr);
   const navn = navneliste?.[elevNr];
   return (
